@@ -1,0 +1,52 @@
+#prueba de servidor
+
+GET http://127.0.0.1:3000/api/v1/home
+
+
+
+####
+
+GET http://127.0.0.1:3000/api/v1/note/
+
+
+####
+
+GET http://127.0.0.1:3000/api/v1/note/4
+
+####
+
+GET http://127.0.0.1:3000/api/v1/note/2
+
+####
+
+GET http://127.0.0.1:3000/api/v1/note/3
+
+
+####
+
+POST http://127.0.0.1:3000/api/v1/note/
+Content-Type: application/json
+
+
+{
+    "title": "hola",
+    "content" : "Las hola son hola",
+    "status" : true
+}
+
+###
+
+DELETE http://127.0.0.1:3000/api/v1/note/3
+
+
+###
+
+PUT http://127.0.0.1:3000/api/v1/note/4
+Content-Type: application/json
+
+{
+    "title": "Actualizado",
+    "content" : "Todo actualizado y fresco",
+    "status" : true
+}
+
