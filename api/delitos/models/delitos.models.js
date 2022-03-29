@@ -18,9 +18,18 @@ export class FuncMethods{
     all(){
         return this.readJsonFile();
     }
-    
-    findById(id){
-        let items = this.readJsonFile()
-        return items.find((item)=> item._id == id)
+    order(arrayD){
+        console.log(arrayD)
+        arrayD.sort((a,b)=>{
+            if ((a._2016.AmboSexos+a._2017.AmboSexos+a._2018.AmboSexos+a._2019.AmboSexos+a._2020.AmboSexos) < (b._2016.AmboSexos+b._2017.AmboSexos+b._2018.AmboSexos+b._2019.AmboSexos+b._2020.AmboSexos)) {
+                return 1;
+              }
+              if ((a._2016.AmboSexos+a._2017.AmboSexos+a._2018.AmboSexos+a._2019.AmboSexos+a._2020.AmboSexos) > (b._2016.AmboSexos+b._2017.AmboSexos+b._2018.AmboSexos+b._2019.AmboSexos+b._2020.AmboSexos)) {
+                return -1;
+              }
+              return 0;
+        })
+        console.log(arrayD)
+        return arrayD 
     }
 }
