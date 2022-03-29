@@ -36,9 +36,7 @@ export class DelitosController{
   getTipo(req, res){
     try{
       let tipo = req.params.delito
-      // console.log(tipo)
       let delito = funcMethods.findDelitos(tipo)
-      // console.log(delito)
       if (delito){
         response.succes(req,res,delito,200);
       }
@@ -56,6 +54,17 @@ export class DelitosController{
     try{
       let Delitos = funcMethods.all();
       let orderDelitos = funcMethods.order(Delitos)
+      response.succes(req,res,orderDelitos,200);
+    }
+    catch(e){
+      response.error(req,res, null, 500)
+    }
+  }
+
+  getPorSexo(req,res){
+    try{
+      let Delitos = funcMethods.all();
+      let orderDelitos = funcMethods.orderSex(Delitos)
       response.succes(req,res,orderDelitos,200);
     }
     catch(e){

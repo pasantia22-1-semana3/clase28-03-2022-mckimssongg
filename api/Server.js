@@ -10,13 +10,15 @@ export class Server{ //constructor del server del appi
     this._app = express();
     this.initMiddleware();
     this.initRoutes();
-
   }
+
+
   initMiddleware(){ // Configurar para saber que datos dejar pasar
       this._app.use(express.json());
       this._app.use(express.urlencoded({extended: true}));
-      
   }
+
+
   initRoutes(){ //Para crear las rutas 
     this._app.use("/api/v1/delitos", routerDelitos);  
     this._app.use("/api/v1/home", (req,res)=>{
@@ -26,6 +28,8 @@ export class Server{ //constructor del server del appi
     });
     
   }
+
+
   initServer(){ //Para iniciar el server
     try{
         this._app.set('trust proxy', this._hostName);
@@ -35,5 +39,5 @@ export class Server{ //constructor del server del appi
     } catch(e){
         console.log('Ocurrio un error')
     }
-}
+    }
 }
