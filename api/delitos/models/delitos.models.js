@@ -32,4 +32,58 @@ export class FuncMethods{
         console.log(arrayD)
         return arrayD 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    findDelitos(tipo){
+        let items = this.readJsonFile();
+        return items.find(item => item.Tipo == tipo)
+    }
 }

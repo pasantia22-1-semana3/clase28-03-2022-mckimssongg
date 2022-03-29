@@ -32,6 +32,26 @@ export class DelitosController{
     }
   }
 
+
+  getTipo(req, res){
+    try{
+      let tipo = req.params.delito
+      // console.log(tipo)
+      let delito = funcMethods.findDelitos(tipo)
+      // console.log(delito)
+      if (delito){
+        response.succes(req,res,delito,200);
+      }
+      else{
+        let messageNotFound="no existe";
+        response.error(req,res, messageNotFound, 404)
+      }
+    }
+    catch(e){
+      response.error(req,res, null, 500)
+    }
+  }
+
   getEstadisticasTotales(req, res){
     try{
       let Delitos = funcMethods.all();
