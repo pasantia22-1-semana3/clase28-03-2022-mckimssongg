@@ -1,6 +1,7 @@
 
 import fs from 'fs'; 
 
+
 export class FuncMethods{
     constructor(){
         this._name = 'db'

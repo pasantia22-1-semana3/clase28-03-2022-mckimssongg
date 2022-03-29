@@ -16,16 +16,15 @@ export class DelitosController{
       response.error(req,res, null, 500)
     }
   }
+
   getTodosLosTipos(req, res){
     try{
       let Delitos = funcMethods.all();
       let tiposDelitos = []
-
-      Delitos.map((delito)=>{
-          let dato = delito.tipo
-          tiposDelitos.push(dato)
-      })
-
+      for(let index = 0; index<Delitos.length; index++){
+        let tipo = Delitos[index].Tipo
+        tiposDelitos.push(tipo)
+      }
       response.succes(req,res,tiposDelitos,200);
     }
     catch(e){
@@ -34,7 +33,17 @@ export class DelitosController{
   }
 
   getEstadisticasTotales(req, res){
+    try{
+      let Delitos = funcMethods.all();
+      let tiposDelitos = []
+      for(let index = 0; index<Delitos.length; index++){
+        let tipo = Delitos[index].Tipo
+        tiposDelitos.push(tipo)
+      }
+      response.succes(req,res,tiposDelitos,200);
+    }
+    catch(e){
+      response.error(req,res, null, 500)
+    }
   }
-
-
 }
